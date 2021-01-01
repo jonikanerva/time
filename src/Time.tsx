@@ -43,7 +43,7 @@ const Time: React.FC = () => {
         <input
           type="text"
           className="inputText timeZone"
-          placeholder="Time Zone"
+          placeholder="Zone"
           spellCheck={false}
           autoComplete="off"
           value={timeZoneValue}
