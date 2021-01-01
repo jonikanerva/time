@@ -1,7 +1,37 @@
-.inputText:invalid {
-  border-color: red;
+.timeContainer {
+  margin: auto;
+  width: 800px;
 }
 
-.inputText:valid {
-  border-color: green;
+.inputContainer {
+  width: 800px;
+  display: flex;
+}
+
+.inputText {
+  font-size: 80px;
+  padding: 5px;
+  margin: 1px;
+  border: 0px;
+}
+
+.inputText:focus {
+  outline: none;
+}
+
+.inputText:invalid {
+  color: red;
+}
+
+.time {
+  width: 50%;
+  text-align: right;
+}
+
+.timeZone {
+  width: 50%;
+}
+
+.displayContainer {
+  text-align: center;
 }
