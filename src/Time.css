@@ -1,0 +1,7 @@
+.inputText:invalid {
+  border-color: red;
+}
+
+.inputText:valid {
+  border-color: green;
+}
