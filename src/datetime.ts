@@ -15,3 +15,13 @@ export const parseTime = (time: string, zone: string): DateTime | undefined => {
     return undefined
   }
 }
+
+export const formatTime = (time: DateTime): [string, string] => {
+  const localTimeString = time.toLocaleString({
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: false,
+  })
+
+  return [localTimeString, time.offsetNameShort]
+}
