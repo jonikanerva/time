@@ -19,10 +19,6 @@
   outline: none;
 }
 
-.inputText:invalid {
-  color: red;
-}
-
 .time {
   width: 50%;
   text-align: right;

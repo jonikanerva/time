@@ -7,13 +7,16 @@ import { parseTime } from './datetime'
 import Display from './Display'
 
 const Time: React.FC = () => {
-  const [timeValue, setTimeValue] = useState<string>('14:00')
+  const [timeValue, setTimeValue] = useState<string>('14')
   const [timeZoneValue, setTimeZoneValue] = useState<string>('UTC')
   const [localTime, setLocalTime] = useState<DateTime>(DateTime.local())
   const [remoteTime, setRemoteTime] = useState<DateTime>(DateTime.local())
+  const [valid, setValid] = useState<boolean>(true)
 
   useEffect(() => {
     const time = parseTime(timeValue, timeZoneValue)
+
+    setValid(time?.isValid || false)
 
     if (time?.isValid) {
       setLocalTime(time.toLocal())
@@ -30,9 +33,7 @@ const Time: React.FC = () => {
           className="inputText time"
           placeholder="Time"
           value={timeValue}
-          tabIndex={1}
           maxLength={5}
-          pattern="([01]?[0-9]|2[0-3]):?([0-5][0-9]){0,2}"
           onChange={(e) => setTimeValue(e.target.value)}
         />
         <input
@@ -40,14 +41,12 @@ const Time: React.FC = () => {
           className="inputText timeZone"
           placeholder="Time Zone"
           spellCheck={false}
-          tabIndex={2}
           value={timeZoneValue}
-          pattern="[A-Za-z\/]+"
           onChange={(e) => setTimeZoneValue(e.target.value)}
         />
       </div>
       <div className="displayContainer">
-        <Display remoteTime={remoteTime} localTime={localTime} />
+        <Display valid={valid} remoteTime={remoteTime} localTime={localTime} />
       </div>
     </div>
   )

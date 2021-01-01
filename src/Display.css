@@ -1,5 +1,10 @@
 .displayContent {
   font-size: 25px;
+  color: black;
+}
+
+.invalidTime {
+  color: red;
 }
 
 .localTimeContainer {
