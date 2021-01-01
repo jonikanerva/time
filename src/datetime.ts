@@ -10,8 +10,6 @@ export const parseTime = (time: string, zone: string): DateTime | undefined => {
       zone,
     })
   } catch (e) {
-    console.error('error', e)
-
     return undefined
   }
 }
