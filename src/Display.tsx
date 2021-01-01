@@ -3,7 +3,7 @@ import './Display.css'
 import { DateTime } from 'luxon'
 import React from 'react'
 
-import { formatTime } from './datetime'
+import { formatTime, dateDiff } from './datetime'
 
 interface DisplayProps {
   localTime: DateTime
@@ -11,8 +11,10 @@ interface DisplayProps {
   valid: boolean
 }
 
-const Display: React.FC<DisplayProps> = ({ localTime, valid }) => {
+const Display: React.FC<DisplayProps> = ({ localTime, remoteTime, valid }) => {
+  const difference = dateDiff(localTime, remoteTime)
   const [localTimeString, localTimeZone] = formatTime(localTime)
+
   const invalidTime = valid ? '' : 'invalidTime'
 
   return (
@@ -22,6 +24,7 @@ const Display: React.FC<DisplayProps> = ({ localTime, valid }) => {
         <div className="localTime">{localTimeString}</div>
         <div className="localTimeZone">{localTimeZone}</div>
       </div>
+      {difference}
     </div>
   )
 }

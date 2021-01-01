@@ -23,3 +23,17 @@ export const formatTime = (time: DateTime): [string, string] => {
 
   return [localTimeString, time.offsetNameShort]
 }
+
+export const dateDiff = (first: DateTime, second: DateTime): string => {
+  const firstDate = DateTime.fromISO(first.toISODate())
+  const secondDate = DateTime.fromISO(second.toISODate())
+  const diff = firstDate.diff(secondDate, 'days').toObject()
+  const days = diff.days ? diff.days : 0
+  const word = Math.abs(days) > 1 ? 'days' : 'day'
+
+  if (days === 0) {
+    return ''
+  }
+
+  return days > 0 ? `+${days} ${word}` : `${days} ${word}`
+}
