@@ -37,6 +37,7 @@ const Time: React.FC = () => {
           value={timeValue}
           maxLength={5}
           autoComplete="off"
+          inputMode="numeric"
           onChange={(e) => setTimeValue(e.target.value)}
         />
         <input
