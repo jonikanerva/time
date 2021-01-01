@@ -1,6 +1,12 @@
-# React SPA Template
+# Time
 
-Template for a client rendered [React][react] app written in [TypeScript][typescript]. It uses [Parcel][parcel] for building, [Prettier][prettier] for code formatting, [eslint][eslint] for static analysis, [yarn][yarn] for package manager, and [nvm][nvm] for managing the Node version.
+Convert a time to your local timezone.
+
+Timezone conversion tools are too complicated. Most of the time one only needs to know what a spacific time is on my timezone. This is the tool for that. Visit, bookmark, and add to your home screen. https://time.calmdonut.com
+
+## Tech
+
+This is a single page [React][react] app written in [TypeScript][typescript]. [Parcel][parcel] is used for building, [Prettier][prettier] for code formatting, [eslint][eslint] for static analysis, [yarn][yarn] for package manager, and [nvm][nvm] for managing the Node version.
 
 ## Setup
 
@@ -10,13 +16,11 @@ Install dependencies with `yarn install`.
 
 Run static analysis and linters with `yarn lint`.
 
-Format files with `yarn format`.
-
 ## Running
 
-Build application with `yarn build`.
+Build production application with `yarn build`.
 
-Start application in dev mode with `yarn start`.
+Start application in dev/watch mode with `yarn start`.
 
 [nvm]: https://github.com/creationix/nvm/
 [prettier]: https://prettier.io
