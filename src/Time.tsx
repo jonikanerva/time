@@ -1,7 +1,7 @@
 import './Time.css'
 
 import { DateTime } from 'luxon'
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { parseTime } from './datetime'
 import Display from './Display'
@@ -15,7 +15,7 @@ const Time: React.FC = () => {
   useEffect(() => {
     const time = parseTime(timeValue, timeZoneValue)
 
-    if (time instanceof DateTime) {
+    if (time?.isValid) {
       setLocalTime(time.toLocal())
       setRemoteTime(time)
     }

@@ -1,0 +1,24 @@
+.displayContent {
+  font-size: 25px;
+}
+
+.localTimeContainer {
+  display: flex;
+}
+
+.localTime {
+  padding-right: 5px;
+  text-align: right;
+  align-self: flex-end;
+  font-size: 80px;
+  flex-basis: 50%;
+}
+
+.localTimeZone {
+  padding-left: 5px;
+  text-align: left;
+  align-self: flex-end;
+  font-size: 50px;
+  flex-basis: 50%;
+  padding-bottom: 7px;
+}

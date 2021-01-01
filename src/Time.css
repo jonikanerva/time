@@ -29,6 +29,10 @@
 }
 
 .timeZone {
+  font-size: 50px;
+  text-align: left;
+  align-self: flex-end;
+  padding-bottom: 12px;
   width: 50%;
 }
 

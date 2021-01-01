@@ -1,5 +1,8 @@
-import React from 'react'
+import './Display.css'
+
 import { DateTime } from 'luxon'
+import React from 'react'
+
 import { formatTime } from './datetime'
 
 interface DisplayProps {
@@ -7,18 +10,16 @@ interface DisplayProps {
   remoteTime: DateTime
 }
 
-const Display: React.FC<DisplayProps> = ({ localTime, remoteTime }) => {
+const Display: React.FC<DisplayProps> = ({ localTime }) => {
   const [localTimeString, localTimeZone] = formatTime(localTime)
-  const [remoteTimeString, remoteTimeZone] = formatTime(remoteTime)
 
   return (
-    <div>
-      <br />
-      {remoteTimeString} {remoteTimeZone}
-      <br />
-      in your time zone ({localTimeZone}) is
-      <br />
-      {localTimeString}
+    <div className="displayContent">
+      is
+      <div className="localTimeContainer">
+        <div className="localTime">{localTimeString}</div>
+        <div className="localTimeZone">{localTimeZone}</div>
+      </div>
     </div>
   )
 }
