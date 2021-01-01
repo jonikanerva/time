@@ -5,14 +5,18 @@
   "private": true,
   "scripts": {
     "s": "yarn start",
-    "build": "yarn lint && yarn clean && parcel build ./public/index.html",
+    "build": "run-s lint clean parcel:build",
+    "parcel:build": "parcel build --experimental-scope-hoisting ./public/index.html",
     "start": "parcel serve --port 3000 ./public/index.html",
     "clean": "rm -rf ./dist",
-    "lint": "yarn lint:eslint && yarn lint:tsc && yarn lint:ts && yarn lint:json",
+    "lint": "run-s lint:*",
     "lint:eslint": "eslint . --ext .ts,.tsx",
     "lint:tsc": "tsc --project .",
     "lint:ts": "prettier --check --parser typescript --config package.json 'src/**/*.ts*'",
-    "lint:json": "prettier --check '**/*.json'"
+    "lint:json": "prettier --check '**/*.json'",
+    "docker:build": "docker build -t docker.pkg.github.com/jonikanerva/dok8s/time:latest .",
+    "docker:push": "docker push docker.pkg.github.com/jonikanerva/dok8s/time:latest",
+    "deploy": "run-s build docker:build docker:push"
   },
   "engines": {
     "node": "^14.15.3"
@@ -32,6 +36,7 @@
     "eslint": "^7.16.0",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-react": "^7.21.5",
+    "npm-run-all": "^4.1.5",
     "parcel": "^1.12.4",
     "prettier": "^2.2.1",
     "typescript": "^4.1.3"
