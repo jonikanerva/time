@@ -2,7 +2,7 @@
 
 Convert a time to your local timezone.
 
-Timezone conversion tools are too complicated. Most of the time one only needs to know what a spacific time is on my timezone. This is the tool for that. Visit, bookmark, and add to your home screen. https://time.calmdonut.com
+Timezone conversion tools are too complicated. Most of the time one only needs to know what a specific time is on your timezone. This is the tool for that. Visit, bookmark, and add to your home screen. https://time.calmdonut.com
 
 ## Tech
 
