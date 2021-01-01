@@ -1,5 +1,5 @@
 .displayContent {
-  font-size: 25px;
+  font-size: 20px;
   color: black;
 }
 
@@ -15,7 +15,7 @@
   padding-right: 5px;
   text-align: right;
   align-self: flex-end;
-  font-size: 80px;
+  font-size: 60px;
   flex-basis: 50%;
 }
 
@@ -23,7 +23,7 @@
   padding-left: 5px;
   text-align: left;
   align-self: flex-end;
-  font-size: 50px;
+  font-size: 40px;
   flex-basis: 50%;
   padding-bottom: 7px;
 }

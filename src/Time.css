@@ -1,18 +1,18 @@
 .timeContainer {
-  margin: auto;
-  width: 800px;
+  width: 100%;
 }
 
 .inputContainer {
-  width: 800px;
   display: flex;
 }
 
 .inputText {
-  font-size: 80px;
+  font-size: 60px;
   padding: 5px;
   margin: 1px;
   border: 0px;
+  user-select: all;
+  -webkit-user-select: all;
 }
 
 .inputText:focus {
@@ -25,7 +25,7 @@
 }
 
 .timeZone {
-  font-size: 50px;
+  font-size: 40px;
   text-align: left;
   align-self: flex-end;
   padding-bottom: 12px;

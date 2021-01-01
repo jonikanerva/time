@@ -24,6 +24,8 @@ const Time: React.FC = () => {
     }
   }, [timeValue, timeZoneValue])
 
+  // https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
   return (
     <div className="timeContainer">
       <div className="inputContainer">
@@ -34,6 +36,7 @@ const Time: React.FC = () => {
           placeholder="Time"
           value={timeValue}
           maxLength={5}
+          autoComplete="off"
           onChange={(e) => setTimeValue(e.target.value)}
         />
         <input
@@ -41,6 +44,7 @@ const Time: React.FC = () => {
           className="inputText timeZone"
           placeholder="Time Zone"
           spellCheck={false}
+          autoComplete="off"
           value={timeZoneValue}
           onChange={(e) => setTimeZoneValue(e.target.value)}
         />
