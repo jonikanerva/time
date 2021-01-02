@@ -1,4 +1,4 @@
 .cache
-node_modules
+.git
 dist
-.parcel-cache
+node_modules
