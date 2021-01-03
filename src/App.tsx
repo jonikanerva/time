@@ -4,10 +4,6 @@ import React from 'react'
 
 import Time from './Time'
 
-const App: React.FC = () => (
-  <div>
-    <Time />
-  </div>
-)
+const App: React.FC = () => <Time />
 
 export default App

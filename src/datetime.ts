@@ -28,7 +28,7 @@ export const dateDiff = (first: DateTime, second: DateTime): string => {
   const firstDate = DateTime.fromISO(first.toISODate())
   const secondDate = DateTime.fromISO(second.toISODate())
   const diff = firstDate.diff(secondDate, 'days').toObject()
-  const days = diff.days ? diff.days : 0
+  const days = diff.days || 0
   const word = Math.abs(days) > 1 ? 'days' : 'day'
 
   if (days === 0) {
