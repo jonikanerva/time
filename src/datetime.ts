@@ -4,11 +4,13 @@ export const parseTime = (time: string, zone: string): DateTime | undefined => {
   try {
     const [hour, minute] = time.split(':')
 
-    return DateTime.fromObject({
-      hour: parseInt(hour, 10),
-      minute: minute ? parseInt(minute, 10) : 0,
-      zone,
-    })
+    return DateTime.fromObject(
+      {
+        hour: parseInt(hour, 10),
+        minute: minute ? parseInt(minute, 10) : 0,
+      },
+      { zone }
+    )
   } catch (e) {
     return undefined
   }
