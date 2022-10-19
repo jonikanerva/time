@@ -13,10 +13,7 @@
     "lint:eslint": "eslint . --ext .ts,.tsx",
     "lint:tsc": "tsc --project .",
     "lint:ts": "prettier --check --parser typescript --config package.json 'src/**/*.ts*'",
-    "lint:json": "prettier --check '**/*.json'",
-    "docker:build": "docker build -t docker.pkg.github.com/jonikanerva/dok8s/time:latest .",
-    "docker:push": "docker push docker.pkg.github.com/jonikanerva/dok8s/time:latest",
-    "deploy": "run-s build docker:build docker:push"
+    "lint:json": "prettier --check '**/*.json'"
   },
   "dependencies": {
     "luxon": "^3.0.4",
