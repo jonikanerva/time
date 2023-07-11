@@ -9,7 +9,7 @@ export const parseTime = (time: string, zone: string): DateTime | undefined => {
         hour: parseInt(hour, 10),
         minute: minute ? parseInt(minute, 10) : 0,
       },
-      { zone }
+      { zone },
     )
   } catch (e) {
     return undefined
@@ -22,13 +22,16 @@ export const formatTime = (time: DateTime): [string, string] => {
     minute: '2-digit',
     hour12: false,
   })
+  const offset = time.offsetNameShort || ''
 
-  return [localTimeString, time.offsetNameShort]
+  return [localTimeString, offset]
 }
 
 export const dateDiff = (first: DateTime, second: DateTime): string => {
-  const firstDate = DateTime.fromISO(first.toISODate())
-  const secondDate = DateTime.fromISO(second.toISODate())
+  const firstISO = first.toISODate() || ''
+  const secondISO = second.toISODate() || ''
+  const firstDate = DateTime.fromISO(firstISO)
+  const secondDate = DateTime.fromISO(secondISO)
   const diff = firstDate.diff(secondDate, 'days').toObject()
   const days = diff.days || 0
   const word = Math.abs(days) > 1 ? 'days' : 'day'
